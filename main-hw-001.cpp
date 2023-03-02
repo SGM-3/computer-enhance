@@ -170,7 +170,7 @@ DecodeInstructionStream(instruction_stream* instructionStream)
 						u8 regField = MASK_REG_FIELD(byte2) >> 3;
 						u8 rmField = MASK_RM_FIELD(byte2) >> 0;
 						
-						if(MASK_DIRECTION_BIT(byte1) == 1)
+						if(MASK_DIRECTION_BIT(byte1))
 						{
 							destination = GlobalRegisterTable[(2 * regField) + operationWidthBit];
 							source = GlobalRegisterTable[(2 * rmField) + operationWidthBit];
